@@ -9,7 +9,7 @@ services:
       - volume_trick:/workspaces/react-vite-sample/node_modules
     working_dir: /workspaces/react-vite-sample
     ports:
-      - 8080:8080
+      - 5173:5173
     tty: true
 
 volumes:
