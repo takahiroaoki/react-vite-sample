@@ -1,15 +1,13 @@
-version: '4'
-
 services:
-  react-vite-app:
+  react-vite-sample:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: react-vite-app
+    container_name: react-vite-sample
     volumes:
-      - ..:/workspaces
-      - volume_trick:/workspaces/react-vite-app/node_modules
-    working_dir: /workspaces/react-vite-app
+      - ..:/workspaces/react-vite-sample
+      - volume_trick:/workspaces/react-vite-sample/node_modules
+    working_dir: /workspaces/react-vite-sample
     ports:
       - 8080:8080
     tty: true
