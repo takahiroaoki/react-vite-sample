@@ -1,5 +1,5 @@
 import styles from './index.module.css'
-import { Link } from "react-router";
+import { Link } from "react-router"
 
 export default function Top() {
   return (
