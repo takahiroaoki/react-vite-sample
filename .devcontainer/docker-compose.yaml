@@ -1,0 +1,18 @@
+version: '4'
+
+services:
+  react-vite-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: react-vite-app
+    volumes:
+      - ..:/workspaces
+      - volume_trick:/workspaces/react-vite-app/node_modules
+    working_dir: /workspaces/react-vite-app
+    ports:
+      - 8080:8080
+    tty: true
+
+volumes:
+  volume_trick:
