@@ -1,7 +1,7 @@
-import styles from './layout.module.css'
+import styles from './base-layout.module.css'
 import { Outlet } from 'react-router-dom';
 
-export default function Layout() {
+export default function BaseLayout() {
   return (
     <>
         <div className={styles.headerSection}>

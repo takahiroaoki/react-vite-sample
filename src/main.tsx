@@ -5,13 +5,13 @@ import '~/stylesheets/reset.css'
 import PageA from '~/pages/page-a/index.tsx'
 import PageB from '~/pages/page-b/index.tsx'
 import Top from '~/pages/top/index.tsx';
-import Layout from '~/layouts/layout';
+import BaseLayout from '~/layouts/base/base-layout';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout />}>
+        <Route element={<BaseLayout />}>
           <Route index element={<Top />} />
           <Route path="/pageA" element={<PageA />} />
           <Route path="/pageB" element={<PageB />} />
