@@ -1,3 +1,28 @@
+.titleSection {
+    padding: 10px;
+}
+
 .title {
     color: black;
+    font-size: 18px;
+}
+
+.navigatorSection {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.navigatorWrapper {
+    margin: 0 10px 0 10px;
+    padding: 10px 20px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.navigator {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
 }

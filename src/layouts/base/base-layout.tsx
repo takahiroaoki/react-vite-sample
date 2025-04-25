@@ -5,7 +5,7 @@ export default function BaseLayout() {
   return (
     <>
         <div className={styles.headerSection}>
-        <h2 className={styles.header}>Layout Header</h2>
+        <h1 className={styles.header}>Layout Header</h1>
         </div>
         <div className={styles.contentSection}>
             <Outlet />
