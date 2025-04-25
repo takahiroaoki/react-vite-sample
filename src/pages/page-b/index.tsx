@@ -1,9 +1,9 @@
-function PageB() {
-    return (
-      <>
-        <p>Page B</p>
-      </>
-    )
-  }
-  
-  export default PageB 
+import styles from './index.module.css'
+
+export default function PageB() {
+  return (
+    <>
+      <p className={styles.title}>Page B</p>
+    </>
+  )
+}

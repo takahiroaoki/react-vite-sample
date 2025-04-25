@@ -1,9 +1,9 @@
-function Top() {
+import styles from './index.module.css'
+
+export default function Top() {
   return (
     <>
-      <p>TOP Screen</p>
+      <p className={styles.title}>TOP Screen</p>
     </>
   )
 }
-
-export default Top
