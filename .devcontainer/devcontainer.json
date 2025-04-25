@@ -1,0 +1,17 @@
+{
+  "name": "react-vite-sample",
+  "dockerComposeFile": [
+    "docker-compose.yaml"
+  ],
+  "service": "react-vite-sample",
+  "workspaceFolder": "/workspaces/react-vite-sample",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "ms-azuretools.vscode-docker",
+        "esbenp.prettier-vscode"
+			]
+		}
+	}
+}
