@@ -9,7 +9,7 @@ import BaseLayout from '~/layouts/base/index';
 
 if (import.meta.env.DEV) {
   const { worker } = await import('./mocks/worker.ts')
-  worker.start()
+  await worker.start()
 }
 
 createRoot(document.getElementById('root')!).render(
