@@ -1,10 +1,10 @@
 export type Example = {
     message: string
-    pageA: SubPage
-    pageB: SubPage
+    pageA: SubPageData
+    pageB: SubPageData
 }
 
-export type SubPage = {
+export type SubPageData = {
     isDisp: boolean
     message: string
     groups: Group[]
