@@ -4,6 +4,7 @@ import { Link } from "react-router"
 import { UrlUtils } from '~/libs/url';
 import { ApiClient } from '~/libs/apiClient';
 import { Example } from '~/libs/schemas';
+import { Path, QueryParam } from '~/libs/const';
 
 export default function PageA() {
   const [params, setParams] = useState(new URLSearchParams())
@@ -11,19 +12,19 @@ export default function PageA() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const params = UrlUtils.getQueryParams();
+    const params = UrlUtils.getQueryParams()
     setParams(params)
 
-    ApiClient.callExample(params.get('param1') ?? '').then((value: Example|null) => {
+    ApiClient.callExample(params.get(QueryParam.PARAM_1) ?? '').then((value: Example|null) => {
       setResponseData(value)
       setIsLoading(false)
     })
-  }, []);
+  }, [])
 
   return (
     <>
       <div className={styles.navigatorSection}>
-        <Link className={styles.navigator} to={`/?${params.toString()}`}>back to Top Page</Link>
+        <Link className={styles.navigator} to={`${Path.TOP}?${params.toString()}`}>back to Top Page</Link>
       </div>
       <div className={styles.titleSection}>
         <h2 className={styles.title}>Page A</h2>
@@ -37,7 +38,9 @@ export default function PageA() {
             <>
               <div>
                 <div>
-                  {responseData ? JSON.stringify(responseData) : 'no data available'}
+                  {responseData && responseData.pageA.isDisp
+                    ? JSON.stringify(responseData.pageA.message)
+                    : 'no data available'}
                 </div>
               </div>
             </>

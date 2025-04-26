@@ -6,6 +6,7 @@ import PageA from '~/pages/page-a/index'
 import PageB from '~/pages/page-b/index'
 import Top from '~/pages/top/index';
 import BaseLayout from '~/layouts/base/index';
+import { Path } from '~/libs/const';
 
 if (import.meta.env.DEV) {
   const { worker } = await import('./mocks/worker.ts')
@@ -17,9 +18,9 @@ createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <Routes>
         <Route element={<BaseLayout />}>
-          <Route index element={<Top />} />
-          <Route path="/pageA" element={<PageA />} />
-          <Route path="/pageB" element={<PageB />} />
+          <Route path={Path.TOP} element={<Top />} />
+          <Route path={Path.PAGE_A} element={<PageA />} />
+          <Route path={Path.PAGE_B} element={<PageB />} />
         </Route>
       </Routes>
     </BrowserRouter>
