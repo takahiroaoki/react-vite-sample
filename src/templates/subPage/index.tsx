@@ -7,9 +7,7 @@ import { Example, SubPageData } from '~/libs/schemas';
 import { Path, QueryParam } from '~/libs/const';
 import SelectForm from '~/organisms/selectForm/selectForm';
 
-const pageA = 'pageA'
-const pageB = 'pageB'
-type SubPageName = typeof pageA | typeof pageB
+type SubPageName = 'pageA' | 'pageB'
 type Props = {
     title: string
     subPageName: SubPageName
@@ -31,7 +29,7 @@ export default function SubPage({ title, subPageName }: Props) {
       }
       setPageData(value[subPageName])
     })
-  }, [])
+  }, [navigate, subPageName])
 
   return (
     <>

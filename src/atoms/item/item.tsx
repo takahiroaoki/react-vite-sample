@@ -13,7 +13,11 @@ export default function Item({ member, onClickFunc }: Props) {
     return (
         <div
             className={styles.item}
-            onClick={() => { onClickFunc && onClickFunc({member}) }}
+            onClick={() => {
+                if (onClickFunc) {
+                    onClickFunc({ member })
+                }
+            }}
         >
             {member.name}
         </div>
