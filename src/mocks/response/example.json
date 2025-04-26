@@ -1,0 +1,11 @@
+{
+    "message": "Welcome to top page!",
+    "pageA": {
+        "isDisp": true,
+        "message": "Welcome to pageA!"
+    },
+    "pageB": {
+        "isDisp": true,
+        "message": "Welcome to pageB!"
+    }
+}
