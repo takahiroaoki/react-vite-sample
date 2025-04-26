@@ -1,5 +1,7 @@
 {
-    "path-autocomplete.pathMappings": {
-        "~": "${folder}/src",
-    }
+  "path-autocomplete.pathMappings": {
+    "~": "${folder}/src"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
 }

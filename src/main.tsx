@@ -1,20 +1,20 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
-import '~/stylesheets/reset.css'
-import '~/stylesheets/default.css'
-import PageA from '~/pages/pageA/index.tsx'
-import PageB from '~/pages/pageB/index.tsx'
-import Top from '~/pages/top/index';
-import BaseLayout from '~/layouts/base/index';
-import { Path } from '~/libs/const';
+import "~/stylesheets/reset.css";
+import "~/stylesheets/default.css";
+import PageA from "~/pages/pageA/index.tsx";
+import PageB from "~/pages/pageB/index.tsx";
+import Top from "~/pages/top/index";
+import BaseLayout from "~/layouts/base/index";
+import { Path } from "~/libs/const";
 
 if (import.meta.env.DEV) {
-  const { worker } = await import('./mocks/worker.ts')
-  await worker.start()
+  const { worker } = await import("./mocks/worker.ts");
+  await worker.start();
 }
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
@@ -26,4 +26,4 @@ createRoot(document.getElementById('root')!).render(
       </Routes>
     </BrowserRouter>
   </StrictMode>,
-)
+);

@@ -3,18 +3,18 @@ import { Group } from "~/libs/schemas";
 import AccordionList from "~/molecules/accordionList/accordionList";
 
 export type Payload = {
-    groups: Group[]
-}
+  groups: Group[];
+};
 
-export type Props = Payload
+export type Props = Payload;
 
 export default function SelectForm({ groups }: Props) {
-    const onClickItemHandler = (itemPayload: ItemPayload) => {
-        console.log(itemPayload.member.name);
-    }
-    return (
-        <>
-            <AccordionList groups={groups} onClickItemFunc={onClickItemHandler} />
-        </>
-    );
+  const onClickItemHandler = (itemPayload: ItemPayload) => {
+    console.log(itemPayload.member.name);
+  };
+  return (
+    <>
+      <AccordionList groups={groups} onClickItemFunc={onClickItemHandler} />
+    </>
+  );
 }

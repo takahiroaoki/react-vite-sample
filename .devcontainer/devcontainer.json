@@ -10,8 +10,9 @@
       "extensions": [
         "ms-vscode.vscode-typescript-next",
         "ms-azuretools.vscode-docker",
-        "esbenp.prettier-vscode",
-        "GitHub.copilot"
+        "GitHub.copilot",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
       ]
 		}
 	}
