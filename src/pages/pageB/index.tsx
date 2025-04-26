@@ -7,7 +7,7 @@ import { Example, Group } from '~/libs/schemas';
 import { Path, QueryParam } from '~/libs/const';
 import SelectForm from '~/organisms/selectForm/selectForm';
 
-export default function PageA() {
+export default function PageB() {
   const [params, setParams] = useState(new URLSearchParams())
   const [responseData, setResponseData] = useState<Example|null>(null)
   const [groups, setGroups] = useState<Group[]>([])
@@ -19,7 +19,7 @@ export default function PageA() {
 
     ApiClient.callExample(params.get(QueryParam.PARAM_1) ?? '').then((value: Example|null) => {
       setResponseData(value)
-      setGroups(value?.pageA.groups ?? [])
+      setGroups(value?.pageB.groups ?? [])
       setIsLoading(false)
     })
   }, [])
@@ -30,7 +30,7 @@ export default function PageA() {
         <Link className={styles.navigator} to={`${Path.TOP}?${params.toString()}`}>back to Top Page</Link>
       </div>
       <div className={styles.titleSection}>
-        <h2 className={styles.title}>Page A</h2>
+        <h2 className={styles.title}>Page B</h2>
       </div>
       {
         (() => {
@@ -39,14 +39,12 @@ export default function PageA() {
           }
           return (
             <>
-              <div>
-                <div>
-                  {responseData && responseData.pageA.isDisp
-                    ? JSON.stringify(responseData.pageA.message)
-                    : 'no data available'}
-                </div>
-                <SelectForm groups={groups} />
+              <div className={styles.message}>
+                {responseData && responseData.pageB.isDisp
+                  ? JSON.stringify(responseData.pageB.message)
+                  : 'no data available'}
               </div>
+              <SelectForm groups={groups} />
             </>
           )
         })()
