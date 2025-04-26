@@ -1,14 +1,16 @@
-import { useState, useEffect } from 'react';
-import { UrlUtils } from '~/libs/url';
+import { useEffect, useState } from 'react';
 import styles from './index.module.css'
 import { Link } from "react-router"
+import { UrlUtils } from '~/libs/url';
 import { ApiClient } from '~/libs/apiClient';
-import { Example } from '~/libs/schemas';
+import { Example, Group } from '~/libs/schemas';
 import { Path, QueryParam } from '~/libs/const';
+import SelectForm from '~/organisms/selectForm/selectForm';
 
-export default function PageB() {
+export default function PageA() {
   const [params, setParams] = useState(new URLSearchParams())
   const [responseData, setResponseData] = useState<Example|null>(null)
+  const [groups, setGroups] = useState<Group[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -17,6 +19,7 @@ export default function PageB() {
 
     ApiClient.callExample(params.get(QueryParam.PARAM_1) ?? '').then((value: Example|null) => {
       setResponseData(value)
+      setGroups(value?.pageA.groups ?? [])
       setIsLoading(false)
     })
   }, [])
@@ -27,7 +30,7 @@ export default function PageB() {
         <Link className={styles.navigator} to={`${Path.TOP}?${params.toString()}`}>back to Top Page</Link>
       </div>
       <div className={styles.titleSection}>
-        <h2 className={styles.title}>Page B</h2>
+        <h2 className={styles.title}>Page A</h2>
       </div>
       {
         (() => {
@@ -36,13 +39,12 @@ export default function PageB() {
           }
           return (
             <>
-              <div>
-                <div>
-                  {responseData && responseData.pageB.isDisp
-                    ? JSON.stringify(responseData.pageB.message)
-                    : 'no data available'}
-                </div>
+              <div className={styles.message}>
+                {responseData && responseData.pageA.isDisp
+                  ? JSON.stringify(responseData.pageA.message)
+                  : 'no data available'}
               </div>
+              <SelectForm groups={groups} />
             </>
           )
         })()

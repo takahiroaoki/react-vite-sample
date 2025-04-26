@@ -2,8 +2,9 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from "react-router";
 import '~/stylesheets/reset.css'
-import PageA from '~/pages/page-a/index'
-import PageB from '~/pages/page-b/index'
+import '~/stylesheets/default.css'
+import PageA from '~/pages/pageA/index'
+import PageB from '~/pages/pageB/index'
 import Top from '~/pages/top/index';
 import BaseLayout from '~/layouts/base/index';
 import { Path } from '~/libs/const';
