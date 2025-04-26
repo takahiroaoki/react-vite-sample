@@ -1,7 +1,13 @@
 import styles from './index.module.css'
-import { Link } from "react-router"
+import { Link } from 'react-router'
+import { ApiClient } from '~/api/client'
+import { Example } from '~/api/schemas'
 
 export default function Top() {
+  ApiClient.callExample().then((value: Example) => {
+    console.log(value)
+  })
+
   return (
     <>
       <div className={styles.titleSection}>

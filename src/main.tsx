@@ -7,6 +7,11 @@ import PageB from '~/pages/page-b/index'
 import Top from '~/pages/top/index';
 import BaseLayout from '~/layouts/base/index';
 
+if (import.meta.env.DEV) {
+  const { worker } = await import('./mocks/worker.ts')
+  worker.start()
+}
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
