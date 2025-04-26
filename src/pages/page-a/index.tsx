@@ -3,12 +3,14 @@ import styles from './index.module.css'
 import { Link } from "react-router"
 import { UrlUtils } from '~/libs/url';
 import { ApiClient } from '~/libs/apiClient';
-import { Example } from '~/libs/schemas';
+import { Example, Group } from '~/libs/schemas';
 import { Path, QueryParam } from '~/libs/const';
+import SelectForm from '~/organisms/selectForm/selectForm';
 
 export default function PageA() {
   const [params, setParams] = useState(new URLSearchParams())
   const [responseData, setResponseData] = useState<Example|null>(null)
+  const [groups, setGroups] = useState<Group[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -17,6 +19,7 @@ export default function PageA() {
 
     ApiClient.callExample(params.get(QueryParam.PARAM_1) ?? '').then((value: Example|null) => {
       setResponseData(value)
+      setGroups(value?.pageA.groups ?? [])
       setIsLoading(false)
     })
   }, [])
@@ -42,6 +45,7 @@ export default function PageA() {
                     ? JSON.stringify(responseData.pageA.message)
                     : 'no data available'}
                 </div>
+                <SelectForm groups={groups} />
               </div>
             </>
           )

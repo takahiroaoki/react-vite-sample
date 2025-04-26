@@ -2,10 +2,82 @@
     "message": "Welcome to top page!",
     "pageA": {
         "isDisp": true,
-        "message": "Welcome to pageA!"
+        "message": "Welcome to pageA!",
+        "groups": [
+            {
+                "name": "group1",
+                "members": [
+                    {
+                        "id": "member1",
+                        "name": "member1"
+                    },
+                    {
+                        "id": "member2",
+                        "name": "member2"
+                    },
+                    {
+                        "id": "member3",
+                        "name": "member3"
+                    }
+                ]
+            },
+            {
+                "name": "group2",
+                "members": [
+                    {
+                        "id": "member1",
+                        "name": "member1"
+                    },
+                    {
+                        "id": "member2",
+                        "name": "member2"
+                    }
+                ]
+            }
+        ]
     },
     "pageB": {
         "isDisp": true,
-        "message": "Welcome to pageB!"
+        "message": "Welcome to pageB!",
+        "groups": [
+            {
+                "name": "group1",
+                "members": [
+                    {
+                        "id": "member1",
+                        "name": "member1"
+                    },
+                    {
+                        "id": "member2",
+                        "name": "member2"
+                    },
+                    {
+                        "id": "member3",
+                        "name": "member3"
+                    }
+                ]
+            },
+            {
+                "name": "group2",
+                "members": [
+                    {
+                        "id": "member1",
+                        "name": "member1"
+                    },
+                    {
+                        "id": "member2",
+                        "name": "member2"
+                    },
+                    {
+                        "id": "member3",
+                        "name": "member3"
+                    },
+                    {
+                        "id": "member4",
+                        "name": "member4"
+                    }
+                ]
+            }
+        ]
     }
 }
